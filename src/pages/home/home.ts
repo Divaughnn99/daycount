@@ -27,8 +27,7 @@ function main(){
   var t1 = new Date()
   // get date/time school Ends
   // 5/16/19
-  var t2 = new Date(2019, 4, 16, 0, 0, 0, 0);
-  console.log(document.getElementById("oink").value)
+  var t2 = new Date();
   var dateInput = document.getElementById("oink").value;
   if (dateInput){
     t2 = new Date(dateInput);
@@ -57,7 +56,15 @@ function main(){
   theDiv.innerHTML = daysBetweenDates + " Days";
 
 
-  // update number 
+  // day:hour:min:sec
+
+  var secInMin = Seconds_Between_Dates % 60
+  var minInHour = minBetweenDates % 60
+  var hourInDay = HoursBetweenDates % 24
+  var daysInYear = daysBetweenDates
+
+  var theDiv5 = document.getElementById("countDown");
+  theDiv5.innerHTML = daysInYear + ":" + hourInDay + ":" + minInHour + ":" + secInMin;
 
 }
 
